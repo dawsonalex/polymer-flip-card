@@ -60,8 +60,6 @@ class CodeHintsCard extends LitElement {
           border-radius: 10px 10px 10px 10px;
           box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
           transition: 0.5s;
-
-          cursor: pointer;
         }
 
         /* Position the front and back side */
@@ -74,6 +72,13 @@ class CodeHintsCard extends LitElement {
         /* Style the back side */
         .flip-card-back {
           transform: rotateY(180deg);
+        }
+
+        .flip-button {
+          position:absolute;
+          right: 4px;
+          bottom: 4px;
+          cursor: pointer;
         }
 
         :host([facedown]) .flip-card-front {
@@ -101,7 +106,7 @@ class CodeHintsCard extends LitElement {
         }
       </style>
       
-      <main id="card" @click=${this.flip}>
+      <main id="card">
         <section id="front" class="flip-card-front card">
             <header class="banner"><slot name="banner-text">Category</slot></header>
             <main>
@@ -115,6 +120,7 @@ class CodeHintsCard extends LitElement {
                 </ol>
               </slot>
             </main>
+            <button class="flip-button" @click=${this.flip}>Flip!</button>
         </section>
 
         <section id="back" class="flip-card-back card">
@@ -130,6 +136,7 @@ class CodeHintsCard extends LitElement {
               </ul>
             </slot>
           </main>
+          <button class="flip-button" @click=${this.flip}>Flip!</button>
         </section>
       </main>
     `;
