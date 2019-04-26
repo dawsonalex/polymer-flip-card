@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>code-hints-card demo</title>
+    <title>flip-card demo</title>
 
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
@@ -13,13 +13,13 @@
       import '@polymer/iron-demo-helpers/demo-snippet';
     </script>
 
-    <script type="module" src="../code-hints-card.js"></script>
+    <script type="module" src="../flip-card.js"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
-        code-hints-card {
+        flip-card {
           display:inline-block;
           margin: 1em auto;
           width: 350px;
@@ -43,13 +43,13 @@
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic code-hints-card demo</h3>
+      <h3>Basic flip-card demo</h3>
       <demo-snippet>
         <template>
-          <code-hints-card></code-hints-card>
-          <code-hints-card facedown></code-hints-card>
+          <flip-card></flip-card>
+          <flip-card facedown></flip-card>
 
-          <code-hints-card>
+          <flip-card>
             <span slot="banner-text"><i class="fab fa-js-square"></i> JavaScript</span>
             <h1 slot="front_title"><i class="fas fa-filter"></i></i>array.filter()</h1>
             <ol slot="front_content">
@@ -72,7 +72,7 @@
               <li class="comment">Values less than 5 characters are added to a new array and stored in result</li>
               <li><code>// output: Array ['pear', 'plum']</code></li>
           </ul>
-          </code-hints-card>
+          </flip-card>
         </template>
       </demo-snippet>
     </div>
