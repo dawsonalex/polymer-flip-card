@@ -201,4 +201,4 @@ class FlipCard extends LitElement {
   }
 }
 
-window.customElements.define('flip-card', CodeHintsCard);
+window.customElements.define('flip-card', FlipCard);
