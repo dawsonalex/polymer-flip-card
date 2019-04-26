@@ -1,14 +1,14 @@
 import { LitElement, html } from 'lit-element';
 
 /**
- * `code-hints-card`
+ * `flip-card`
  * A card component based on the code-it notes by Dan Harding &lt;https://dev.to/danielharding&gt;
  *
  * @customElement
  * @polymer
  * @demo demo/index.html
  */
-class CodeHintsCard extends LitElement {
+class FlipCard extends LitElement {
   render() {
     return html`
       <style>
@@ -201,4 +201,4 @@ class CodeHintsCard extends LitElement {
   }
 }
 
-window.customElements.define('code-hints-card', CodeHintsCard);
+window.customElements.define('flip-card', CodeHintsCard);
