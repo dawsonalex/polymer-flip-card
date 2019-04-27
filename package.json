@@ -1,6 +1,17 @@
 {
   "name": "flip-card",
-  "description": "A card component based on the code-it notes by Dan Harding &lt;https://dev.to/danielharding&gt;",
+	"description": "A card component based on the code-it notes by Dan Harding &lt;https://dev.to/danielharding&gt;",
+	"keywords": [
+		"web-components",
+		"lit-element",
+		"card"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dawsonalex/flip-card"
+	},
+	"license": "GPL-3.0",
+	"author": "Alex Dawson",
   "main": "flip-card.js",
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
