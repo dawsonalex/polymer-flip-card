@@ -22,6 +22,7 @@ Then use it like you would any other HTML tag:
 	<flip-card></flip-card>
 
 The content on the card can be edited by adding children to the element and giving their slot attribute on of the following names:
+
 | Slot Name	| Description |
 | ---------- | ---------- |
 | banner-text | The text to display in the cards banner. |
