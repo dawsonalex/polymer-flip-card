@@ -59,7 +59,8 @@ class FlipCard extends LitElement {
           border-top: 4px solid ${this.accent};
           border-radius: 10px 10px 10px 10px;
           box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-          transition: 0.5s;
+          transition: transform 0.5s ease-in-out;
+					overflow: hidden;
         }
 
         /* Position the front and back side */
@@ -76,10 +77,28 @@ class FlipCard extends LitElement {
 
         .flip-button {
           position:absolute;
-          right: 4px;
-          bottom: 4px;
+					width: 80px;
+					height: 80px;
+          right: -40px;
+          bottom: -40px;
           cursor: pointer;
+
+					border: 4px solid ${this.accent};
+					background: ${this.accent};
+					border-radius: 50%;
         }
+
+				.flip-button-icon {
+					display:inline-block;
+					position: relative;
+					top: -14px;
+					left: -14px;
+					width:20px;
+					height:20px;
+					background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path d="M8.192 0C4.638 6.439 4.039 16.259 18 15.932V8l12 12-12 12v-7.762C1.282 24.674-.58 9.481 8.192 0z"/></svg>');
+					background-repeat: no-repeat;
+					background-size: contain;
+				}
 
         :host([facedown]) .flip-card-front {
           transform: rotateY(180deg);
@@ -120,7 +139,9 @@ class FlipCard extends LitElement {
                 </ol>
               </slot>
             </main>
-            <button class="flip-button" @click=${this.flip}>Flip!</button>
+            <button class="flip-button" @click=${this.flip}>
+							<span class="flip-button-icon"></span>
+						</button>
         </section>
 
         <section id="back" class="flip-card-back card">
@@ -136,7 +157,9 @@ class FlipCard extends LitElement {
               </ul>
             </slot>
           </main>
-          <button class="flip-button" @click=${this.flip}>Flip!</button>
+          <button class="flip-button" @click=${this.flip}>
+						<span class="flip-button-icon"></span>
+					</button>
         </section>
       </main>
     `;
