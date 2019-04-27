@@ -189,11 +189,6 @@ class FlipCard extends LitElement {
       accent: {
         type: String,
         reflect: true
-      },
-
-      accentShadow: {
-        type: String,
-        reflect: true
       }
     };
   }
