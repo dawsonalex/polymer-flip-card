@@ -23,13 +23,13 @@ Then use it like you would any other HTML tag:
 
 The content on the card can be edited by adding children to the element and giving their slot attribute on of the following names:
 
-| Slot Name	| Description |
-| ---------- | ---------- |
-| banner-text | The text to display in the cards banner. |
-| front-title | The title for the front of the card. |
-| front_content | The content for the front of the card. |
-| back_title | The title for the back of the card. |
-| back_content | The main content for the back of the card. |
+| Slot Name     | Description                                |
+|---------------|--------------------------------------------|
+| banner-text   | The text to display in the cards banner.   |
+| front-title   | The title for the front of the card.       |
+| front_content | The content for the front of the card.     |
+| back_title    | The title for the back of the card.        |
+| back_content  | The main content for the back of the card. |
 
 ### Attributes
 
