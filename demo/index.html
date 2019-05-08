@@ -15,7 +15,10 @@
 
     <script type="module" src="../flip-card.js"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
@@ -34,9 +37,93 @@
           padding-left: 20px;
         }
 
+				li {
+					font-size: 16px;
+				}
+
+				ol li {
+					margin-bottom: 8px;
+				}
+
         li code {
           background-color: black;
           color: white;
+        }
+
+				li.comment {
+					color: #888;
+				}
+				
+				.icon-margin {
+					margin-right: 8px;
+				}
+
+				.card-image {
+					background-image: url("asset/if_block.png");
+					background-origin: content-box;
+					background-size: auto;
+					background-repeat: no-repeat;
+				}
+
+				.greenCard {
+					--accent: #6eda6d;
+				}
+
+				.transparentCard {
+					--accent: transparent;
+				}
+
+
+				flip-card [slot$="-content"] main {
+					margin: 8px;
+				}
+
+				flip-card [slot$="-content"] main p {
+					font-size: 1.25em;
+					margin: 0;
+				}
+
+				flip-card [slot="back-content"] {
+					width: 100%;
+					height: 100%;
+					margin: 0;
+					border: none;
+				}
+
+				flip-card [slot="back-content"] pre {
+					overflow: auto;
+					padding: 1em;
+					margin: 0;
+					height: 100%;
+					border: none;
+					background: #aeaeae;
+					font-size: 1.25em;
+				}
+
+				.card-title {
+					font-size: 2em;
+					font-family: 'Lato', sans-serif;
+				}
+
+				img.header-img {
+					width: 100%;
+					height: 200px;
+				}
+
+				header.image-header img {
+					object-fit: contain;
+				}
+
+				header.banner{
+          align-items: center;
+          border-radius: 5px 5px 0 0;
+          border:1px solid black;
+          background-color: black;
+          color: white;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          padding: .5em;
         }
       </style>
     </custom-style>
@@ -46,35 +133,98 @@
       <h3>Basic flip-card demo</h3>
       <demo-snippet>
         <template>
-          <flip-card></flip-card>
-          <flip-card facedown></flip-card>
 
           <flip-card>
-            <span slot="banner-text"><i class="fab fa-js-square"></i> JavaScript</span>
-            <h1 slot="front_title"><i class="fas fa-filter"></i></i>array.filter()</h1>
-            <ol slot="front_content">
-              <li>Takes an array</li>
-              <li>A callback function filters the array</li>
-              <li>Filter is applied to each array item</li>
-              <li>If the value matches the filter (truthy), it's added to a new array</li>
-              <li>If it doesn't match (falsy), ignore it</li>
-              <li>Returns a new array</li>
-            </ol>
+						<section slot="front-content">
+							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
+							<main>
+								<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
+								<ol>
+									<li>Takes an array</li>
+									<li>A callback function filters the array</li>
+									<li>Filter is applied to each array item</li>
+									<li>If the value matches the filter (truthy), it's added to a new array</li>
+									<li>If it doesn't match (falsy), ignore it</li>
+									<li>Returns a new array</li>
+								</ol>
+							</main>
+						</section>
+						
+						<section slot="back-content">
+							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
+							<main>
+								<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
+								<ul>
+									<li><code>var fruits = ['pear', 'banana', 'plum'];</code></li>
+									<li class="comment">Fruits contains an array with 3 strings</li>
+									<li><code>const result = fruits.filter(fruit => fruit.length &lt; 5); </code></li>
+									<li class="comment">Fruit represents each array item</li>
+									<li><code>console.log(result);</code></li>
+									<li class="comment">Values less than 5 characters are added to a new array and stored in result</li>
+									<li><code>// output: Array ['pear', 'plum']</code></li>
+								</ul>
+							</main>
+						</section>
+					</flip-card>
+					
+					<flip-card class="greenCard">
+						<section slot="front-content">
+							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
+							<main>
+								<h1 class="card-title"><i class="fas fa-exchange-alt icon-margin"></i></i>array.reverse()</h1>
+								<ol>
+									<li>Takes an array</li>
+									<li>Reverses the order of the array elements</li>
+									<li>This method is destructive, meaning it permanently changes the origional array</li>
+								</ol>
+							</main>
+						</section>
 
-            <span slot="banner-text_back"><i class="fab fa-js-square"></i> JavaScript</span>
-            <h1 slot="back_title"><i class="fas fa-filter"></i></i>array.filter()</h1>
-            <ul slot="back_content">
-              <li><code>var fruits = ['pear', 'banana', 'plum'];</code></li>
-              <li class="comment">Fruits contains an array with 3 strings</li>
-              <li><code>const result = fruits.filter(fruit => fruit.length < 5); </code></li>
-              <li class="comment">Fruit represents each array item</li>
-              <li><code>console.log(result);</code></li>
-              <li class="comment">Values less than 5 characters are added to a new array and stored in result</li>
-              <li><code>// output: Array ['pear', 'plum']</code></li>
-          </ul>
-          </flip-card>
+						<section slot="back-content">
+							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
+							<main>
+								<h1 class="card-title"><i class="fas fa-exchange-alt icon-margin"></i></i>array.reverse()</h1>
+								<ul>
+									<li><code>var yodaSays = ['sense', 'no', 'makes'];</code></li>
+									<li class="comment">A variable containing an array</li>
+									<li><code>var yodaTranslation = yodaSays.reverse();</code></li>
+									<li><code>console.log(yodaTranslation);</code></li>
+									<li><code>// output: Array ['makes', 'no', 'sense']</code></li>
+									<li><code>console.log(yodaSays);</code></li>
+									<li><code>// output: Array ['makes', 'no', 'sense']</code></li>
+									<li class="comment">Both outputs are the same as the origional array has been permanently mutated</li>
+								</ul>
+							</main>
+						</section>
+					</flip-card>
+					
+					<flip-card class="greenCard">
+						<section slot="front-content" >
+								<img class="header-img" src="asset/if_block.png" />
+								<main>
+									<h1 class="card-title">Conditional Block</h1>
+									<p>Code inside the conditional block will execute if the first statement is true</p>
+								</main>
+						</section>
+
+						<section slot="back-content">
+<pre class="prettyprint lang-c">
+// The 'true' value 
+// can be replaced 
+// with another conditional
+if (true) {
+  // inner code executes
+  // if the conditional 
+  // is evaluates to true
+}</pre>
+						</section>
+					</flip-card>
         </template>
       </demo-snippet>
-    </div>
+		</div>
+		
+		<script>
+			addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+		</script>
   </body>
 </html>
