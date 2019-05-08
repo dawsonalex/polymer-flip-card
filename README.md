@@ -1,7 +1,7 @@
 
 # Flip Card Component
 A card component based on the code-it notes by [Dan Harding](https://dev.to/danielharding).
-flip-card elements can be used to create revision cards for a variety of subjects. Take a look at code-it notes for examples on how to format your card content
+flip-card elements can be used to create card style components on the page, with a front and back. The user can click the bottom left corner of the card to see if flip over, revealing its other side.
 ## Installation
 Install the component from npm:
 
@@ -21,22 +21,35 @@ Then use it like you would any other HTML tag:
 
 	<flip-card></flip-card>
 
-The content on the card can be edited by adding children to the element and giving their slot attribute on of the following names:
+The content on the card can be edited by adding children to the element and giving their slot attribute one of the following names:
 
-| Slot Name     | Description                                |
-|---------------|--------------------------------------------|
-| banner-text   | The text to display in the cards banner.   |
-| front-title   | The title for the front of the card.       |
-| front_content | The content for the front of the card.     |
-| back_title    | The title for the back of the card.        |
-| back_content  | The main content for the back of the card. |
+| Slot Name     | Description                           |
+|---------------|---------------------------------------|
+| front-content | The content for the front of the card |
+| back-content  | The content for the back of the card  |
+
+Slotted content can be styled just using css, like any other element on the page.
 
 ### Attributes
 
 | Attrbiute Name | Type | Description |
 | -------------- | ----- |----------- |
 | facedown | boolean | Show the back side of the card. |
-| accent | string | Set an accent colour for the card. Defaults to rgb(255, 212, 45) but any valid CSS colour can be used.
+
+## Styling
+Cards can be styled by setting css variables. The variables that can be set are: 
+
+| Variable         | Description|
+|------------------|--------------|
+| accent           | Set the colour of the card border and flip button background. Defaults to rgb(255, 212, 45) |
+| flipButtonColour | Set the colour of the flip button icon. Defaults to #000000                                 |
+
+The following css sets the accent colour for all flip-cards on the page to green: 
+```
+flip-card {
+  --accent: green;
+}
+```
 
 ## Contributing
 1. Fork it!
@@ -45,7 +58,7 @@ The content on the card can be edited by adding children to the element and givi
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 ## Credits
-Based on code-hints by [Dan Harding](https://dev.to/danielharding,  
+Based on [Code-it Notes](https://www.instagram.com/same_dev_different_day/?hl=en) by [Dan Harding](https://dev.to/danielharding),  
 Implemented by Alex Dawson
 ## License
-Licensed under [GPL-3.0](https://github.com/dawsonalex/flip-card/blob/master/LICENSE)
+Licensed under [The Unlicense](https://unlicense.org/)
