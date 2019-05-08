@@ -22,24 +22,6 @@ class FlipCard extends LitElement {
           box-sizing: border-box;
         }
 
-        header.banner{
-          align-items: center;
-          border-radius: 5px 5px 0 0;
-          border:1px solid black;
-          background-color: ${this._bannerBackgroundColour};
-          color: ${this._bannerTextColour};
-          font-family: 'Poppins', sans-serif;
-          font-weight: 400;
-          font-size: 0.75rem;
-          padding: .5em;
-        }
-
-        #front main,
-        #back main {
-          font-family: 'Poppins', sans-serif;
-          padding: 0.75rem;
-        }
-
         #card {
           background-color: transparent;
           width: 100%;
@@ -53,14 +35,16 @@ class FlipCard extends LitElement {
         .card {
           color: ${this._mainTextColour};
           background: ${this._mainBackgroundColour};
-          border-right: 4px solid ${this.accent};
-          border-bottom: 4px solid ${this.accent};
-          border-left: 4px solid ${this.accent};
-          border-top: 4px solid ${this.accent};
+          border-right: 4px solid var(--accent, rgb(255, 212, 45));
+          border-bottom: 4px solid var(--accent, rgb(255, 212, 45));
+          border-left: 4px solid var(--accent, rgb(255, 212, 45));
+          border-top: 4px solid var(--accent, rgb(255, 212, 45));
           border-radius: 10px 10px 10px 10px;
           box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
           transition: transform 0.5s ease-in-out;
 					overflow: hidden;
+
+					padding-bottom: 32px;
         }
 
         /* Position the front and back side */
@@ -83,8 +67,8 @@ class FlipCard extends LitElement {
           bottom: -40px;
           cursor: pointer;
 
-					border: 4px solid ${this.accent};
-					background: ${this.accent};
+					border: 4px solid var(--accent, rgb(255, 212, 45));;
+					background: var(--accent, rgb(255, 212, 45));;
 					border-radius: 50%;
         }
 
@@ -98,6 +82,8 @@ class FlipCard extends LitElement {
 					background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path d="M8.192 0C4.638 6.439 4.039 16.259 18 15.932V8l12 12-12 12v-7.762C1.282 24.674-.58 9.481 8.192 0z"/></svg>');
 					background-repeat: no-repeat;
 					background-size: contain;
+
+					color: var(--flipButtonColour, #000);
 				}
 
         :host([facedown]) .flip-card-front {
@@ -124,40 +110,18 @@ class FlipCard extends LitElement {
           }
         }
       </style>
-      
-      <main id="card">
+
+			<main id="card">
         <section id="front" class="flip-card-front card">
-            <header class="banner"><slot name="banner-text">Category</slot></header>
-            <main>
-              <slot name="front_title">
-                <h1>Card Title</h1>
-              </slot>
-              <slot name="front_content">
-                <ol>
-                  <li>Assign an element to the "front_content" slot</li>
-                  <li>Reload the page!</li>
-                </ol>
-              </slot>
-            </main>
-            <button class="flip-button" @click=${this.flip}>
+            <slot name="front-content">Front side content!</slot>
+            <button class="flip-button" @click=${() => this.toggleAttribute('facedown')}>
 							<span class="flip-button-icon"></span>
 						</button>
         </section>
 
         <section id="back" class="flip-card-back card">
-          <header class="banner"><slot name="banner-text_back">Category</slot></header>
-          <main>
-            <slot name="back_title">
-              <h1>Back Side Title</h1>
-            </slot>
-            <slot name="back_content">
-              <ul>
-                <li>More content can go in the "back_content" slot</li>
-                <li>Add some stuff!</li>
-              </ul>
-            </slot>
-          </main>
-          <button class="flip-button" @click=${this.flip}>
+					<slot name="back-content">Back side content!</slot>
+          <button class="flip-button" @click=${() => this.toggleAttribute('facedown')}>
 						<span class="flip-button-icon"></span>
 					</button>
         </section>
@@ -168,11 +132,7 @@ class FlipCard extends LitElement {
   constructor() {
     super();
     this.cardHeight = '0px';
-    this._bannerTextColour = '#ffffff';
-    this._bannerBackgroundColour = '#000000';
-    this._mainBackgroundColour = '#ffffff';
-    this._mainTextColour = '#000000';
-    this.accent = 'rgb(255, 212, 45)';
+		this.facedown = false;
   }
 
   firstUpdated(changedProperties) {
@@ -186,21 +146,30 @@ class FlipCard extends LitElement {
         reflect: false
       },
 
-      accent: {
-        type: String,
-        reflect: true
-      }
+			facedown: {
+				type: Boolean,
+				relfect: true
+			}
     };
   }
 
-  flip(e) {
-    this.toggleAttribute('facedown');
+	attributeChangedCallback(name, oldval, newval) {
+		super.attributeChangedCallback(name, oldval, newval);
+		switch(name) {
+			case 'facedown':
+				this.flip();
+				break;
+			default:
+				break;
+		}
+  }
 
-    let card = this.shadowRoot.getElementById('card');
+  flip(e) {
+		let card = this.shadowRoot.getElementById('card');
     card.classList.add('animateJump');
     card.addEventListener('animationend', () => {
       card.classList.remove('animateJump');
-    });
+		});
   }
 
   /**
