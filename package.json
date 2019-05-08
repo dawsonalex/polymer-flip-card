@@ -12,7 +12,8 @@
 	},
 	"license": "GPL-3.0",
 	"author": "Alex Dawson",
-  "main": "flip-card.js",
+	"main": "flip-card.js",
+	"module": "flip-card.js",
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
   },
