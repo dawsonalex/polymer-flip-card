@@ -8,6 +8,8 @@ Install the component from npm:
 
 	npm install --save flip-card
 
+or if you aren't using npm, a bundled component is available at bundle/flip-card.js. However this includes the whole Lit-Element library rolled up (~22KB total).
+
 ## Usage
 Import the module to your .html file:
 ```html
