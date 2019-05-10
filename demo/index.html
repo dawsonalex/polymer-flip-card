@@ -13,7 +13,7 @@
       import '@polymer/iron-demo-helpers/demo-snippet';
     </script>
 
-    <script type="module" src="../flip-card.js"></script>
+    <script type="module" src="../bundle/flip-card.js"></script>
 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
@@ -125,6 +125,10 @@
           font-size: 0.75rem;
           padding: .5em;
         }
+
+				demo-snippet {
+					--demo-snippet-demo_-_display: flex;
+				}
       </style>
     </custom-style>
   </head>
@@ -166,38 +170,11 @@
 							</main>
 						</section>
 					</flip-card>
+				</template>
+      </demo-snippet>
 					
-					<flip-card class="greenCard">
-						<section slot="front-content">
-							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
-							<main>
-								<h1 class="card-title"><i class="fas fa-exchange-alt icon-margin"></i></i>array.reverse()</h1>
-								<ol>
-									<li>Takes an array</li>
-									<li>Reverses the order of the array elements</li>
-									<li>This method is destructive, meaning it permanently changes the origional array</li>
-								</ol>
-							</main>
-						</section>
-
-						<section slot="back-content">
-							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
-							<main>
-								<h1 class="card-title"><i class="fas fa-exchange-alt icon-margin"></i></i>array.reverse()</h1>
-								<ul>
-									<li><code>var yodaSays = ['sense', 'no', 'makes'];</code></li>
-									<li class="comment">A variable containing an array</li>
-									<li><code>var yodaTranslation = yodaSays.reverse();</code></li>
-									<li><code>console.log(yodaTranslation);</code></li>
-									<li><code>// output: Array ['makes', 'no', 'sense']</code></li>
-									<li><code>console.log(yodaSays);</code></li>
-									<li><code>// output: Array ['makes', 'no', 'sense']</code></li>
-									<li class="comment">Both outputs are the same as the origional array has been permanently mutated</li>
-								</ul>
-							</main>
-						</section>
-					</flip-card>
-					
+			<demo-snippet>
+				<template>
 					<flip-card class="greenCard">
 						<section slot="front-content" >
 								<img class="header-img" src="asset/if_block.png" />
