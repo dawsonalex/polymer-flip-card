@@ -1,23 +1,30 @@
 {
   "name": "flip-card",
-	"description": "A card component based on the code-it notes by Dan Harding &lt;https://dev.to/danielharding&gt;",
-	"keywords": [
-		"web-components",
-		"lit-element",
-		"card"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/dawsonalex/flip-card"
-	},
-	"license": "GPL-3.0",
-	"author": "Alex Dawson",
-	"main": "flip-card.js",
-	"module": "flip-card.js",
+  "description": "A card component based on the code-it notes by Dan Harding &lt;https://dev.to/danielharding&gt;",
+  "keywords": [
+    "web-components",
+    "lit-element",
+    "card"
+  ],
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dawsonalex/flip-card"
+  },
+  "scripts": {
+    "bundle": "rollup --config rollup.config.js"
+  },
+  "license": "Unlicense",
+  "author": "Alex Dawson",
+  "main": "flip-card.js",
+  "module": "flip-card.js",
   "dependencies": {
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-decorators": "^7.2.3",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0",
@@ -25,6 +32,10 @@
     "eslint": "^5.16.0",
     "lit-element": "^2.1.0",
     "mocha": "^5.2.0",
+    "rollup": "^1.11.3",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^4.0.4",
     "wct-mocha": "^1.0.0"
   }
 }
