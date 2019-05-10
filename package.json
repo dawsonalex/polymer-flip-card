@@ -12,7 +12,8 @@
     "url": "https://github.com/dawsonalex/flip-card"
   },
   "scripts": {
-    "bundle": "rollup --config rollup.config.js"
+		"bundle": "rollup --config rollup.config.js",
+		"build:demo": "cp bundle/flip-card.js demo;git subtree push --prefix demo origin gh-pages"
   },
   "license": "Unlicense",
   "author": "Alex Dawson",
