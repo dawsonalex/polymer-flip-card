@@ -15,7 +15,7 @@
     "bundle": "rollup --config rollup.config.js",
     "build:demo": "cp bundle/flip-card.js demo && cp ./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js demo;git subtree push --prefix demo origin gh-pages"
   },
-  "license": "Unlicense",
+  "license": "MIT",
   "author": "Alex Dawson",
   "main": "flip-card.js",
   "module": "flip-card.js",
