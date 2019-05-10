@@ -90,7 +90,7 @@ Cards can be styled by setting css variables. The variables that can be set are:
 | flipButtonColour | Set the colour of the flip button icon. Defaults to #000000                                 |
 
 The following css sets the accent colour for all flip-cards on the page to green: 
-```
+```css
 flip-card {
   --accent: green;
 }
