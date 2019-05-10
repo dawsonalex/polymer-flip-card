@@ -1,4 +1,4 @@
-
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@adaws/flip-card)
 # Flip Card Component
 A card component based on the code-it notes by [Dan Harding](https://dev.to/danielharding).
 flip-card elements can be used to create card style components on the page, with a front and back. The user can click the bottom left corner of the card to see if flip over, revealing its other side.
