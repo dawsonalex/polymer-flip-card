@@ -1,5 +1,5 @@
 {
-  "name": "flip-card",
+  "name": "@adaws/flip-card",
   "description": "A card component based on the code-it notes by Dan Harding &lt;https://dev.to/danielharding&gt;",
   "keywords": [
     "web-components",
