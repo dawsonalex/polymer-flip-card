@@ -10,13 +10,14 @@ Install the component from npm:
 
 ## Usage
 Import the module to your .html file:
-
-	<script type="module" src="path/to/flip-card.js"></script>
+```html
+<script type="module" src="path/to/flip-card.js"></script>
+```
 
 or .js file:
-
-	import('path/to/flip-card.js');
-
+```js
+import('path/to/flip-card.js');
+```
 
 Then use it like you would any other HTML tag:
 
