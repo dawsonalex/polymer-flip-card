@@ -8,129 +8,115 @@
 
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <script type="module">
-      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
-      import '@polymer/iron-demo-helpers/demo-snippet';
-    </script>
-
     <script type="module" src="../bundle/flip-card.js"></script>
 
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+		<style>
+			flip-card {
+				display:inline-block;
+				margin: 1em auto;
+				width: 350px;
+			}
 
+			ul {
+				list-style: none;
+				padding-left: 0;
+			}
 
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-        flip-card {
-          display:inline-block;
-          margin: 1em auto;
-          width: 350px;
-        }
+			ol {
+				padding-left: 20px;
+			}
 
-        ul {
-          list-style: none;
-          padding-left: 0;
-        }
+			li {
+				font-size: 16px;
+			}
 
-        ol {
-          padding-left: 20px;
-        }
+			ol li {
+				margin-bottom: 8px;
+			}
 
-				li {
-					font-size: 16px;
-				}
+			li code {
+				background-color: black;
+				color: white;
+			}
 
-				ol li {
-					margin-bottom: 8px;
-				}
+			li.comment {
+				color: #888;
+			}
 
-        li code {
-          background-color: black;
-          color: white;
-        }
+			.icon-margin {
+				margin-right: 8px;
+			}
 
-				li.comment {
-					color: #888;
-				}
-				
-				.icon-margin {
-					margin-right: 8px;
-				}
+			.card-image {
+				background-image: url("asset/if_block.png");
+				background-origin: content-box;
+				background-size: auto;
+				background-repeat: no-repeat;
+			}
 
-				.card-image {
-					background-image: url("asset/if_block.png");
-					background-origin: content-box;
-					background-size: auto;
-					background-repeat: no-repeat;
-				}
+			.greenCard {
+				--accent: #6eda6d;
+			}
 
-				.greenCard {
-					--accent: #6eda6d;
-				}
+			flip-card [slot$="-content"] main {
+				margin: 8px;
+			}
 
-				.transparentCard {
-					--accent: transparent;
-				}
+			flip-card [slot$="-content"] main p {
+				font-size: 1.25em;
+				margin: 0;
+			}
 
+			flip-card [slot="back-content"] {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				border: none;
+			}
 
-				flip-card [slot$="-content"] main {
-					margin: 8px;
-				}
+			flip-card [slot="back-content"] pre {
+				overflow: auto;
+				padding: 1em;
+				margin: 0;
+				height: 100%;
+				border: none;
+				background: #aeaeae;
+				font-size: 1.25em;
+			}
 
-				flip-card [slot$="-content"] main p {
-					font-size: 1.25em;
-					margin: 0;
-				}
+			.card-title {
+				font-size: 2em;
+				font-family: 'Lato', sans-serif;
+			}
 
-				flip-card [slot="back-content"] {
-					width: 100%;
-					height: 100%;
-					margin: 0;
-					border: none;
-				}
+			img.header-img {
+				width: 100%;
+				height: 200px;
+			}
 
-				flip-card [slot="back-content"] pre {
-					overflow: auto;
-					padding: 1em;
-					margin: 0;
-					height: 100%;
-					border: none;
-					background: #aeaeae;
-					font-size: 1.25em;
-				}
+			header.image-header img {
+				object-fit: contain;
+			}
 
-				.card-title {
-					font-size: 2em;
-					font-family: 'Lato', sans-serif;
-				}
+			header.banner{
+				align-items: center;
+				border-radius: 5px 5px 0 0;
+				border:1px solid black;
+				background-color: black;
+				color: white;
+				font-family: 'Poppins', sans-serif;
+				font-weight: 400;
+				font-size: 0.75rem;
+				padding: .5em;
+			}
 
-				img.header-img {
-					width: 100%;
-					height: 200px;
-				}
-
-				header.image-header img {
-					object-fit: contain;
-				}
-
-				header.banner{
-          align-items: center;
-          border-radius: 5px 5px 0 0;
-          border:1px solid black;
-          background-color: black;
-          color: white;
-          font-family: 'Poppins', sans-serif;
-          font-weight: 400;
-          font-size: 0.75rem;
-          padding: .5em;
-        }
-
-				demo-snippet {
-					--demo-snippet-demo_-_display: flex;
-				}
-      </style>
-    </custom-style>
+			demo-snippet {
+				--demo-snippet-demo_-_display: flex;
+			}
+		</style>
   </head>
   <body>
     <div class="vertical-section-container centered">
