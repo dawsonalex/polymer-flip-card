@@ -14,9 +14,16 @@
 		<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 		<style>
+			body {
+				display: flex;
+				flex-flow: column wrap;
+				flex-direction: row;
+				justify-content: center;
+			}
+
 			flip-card {
 				display:inline-block;
-				margin: 1em auto;
+				margin: 1em;
 				width: 350px;
 			}
 
@@ -113,56 +120,58 @@
 				padding: .5em;
 			}
 
-			demo-snippet {
-				--demo-snippet-demo_-_display: flex;
+			#demo-title {
+				width: 100%;
+				text-align: center;
+				font-family: 'Lato', sans-serif;
 			}
 		</style>
   </head>
   <body>
-      <h3>Basic flip-card demo</h3>
-          <flip-card>
-						<section slot="front-content">
-							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
-							<main>
-								<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
-								<ol>
-									<li>Takes an array</li>
-									<li>A callback function filters the array</li>
-									<li>Filter is applied to each array item</li>
-									<li>If the value matches the filter (truthy), it's added to a new array</li>
-									<li>If it doesn't match (falsy), ignore it</li>
-									<li>Returns a new array</li>
-								</ol>
-							</main>
-						</section>
-						
-						<section slot="back-content">
-							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
-							<main>
-								<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
-								<ul>
-									<li><code>var fruits = ['pear', 'banana', 'plum'];</code></li>
-									<li class="comment">Fruits contains an array with 3 strings</li>
-									<li><code>const result = fruits.filter(fruit => fruit.length &lt; 5); </code></li>
-									<li class="comment">Fruit represents each array item</li>
-									<li><code>console.log(result);</code></li>
-									<li class="comment">Values less than 5 characters are added to a new array and stored in result</li>
-									<li><code>// output: Array ['pear', 'plum']</code></li>
-								</ul>
-							</main>
-						</section>
-					</flip-card>
+      <h1 id="demo-title">Tap the arrow in the corner of the card to flip it!</h1>
+				<flip-card>
+					<section slot="front-content">
+						<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
+						<main>
+							<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
+							<ol>
+								<li>Takes an array</li>
+								<li>A callback function filters the array</li>
+								<li>Filter is applied to each array item</li>
+								<li>If the value matches the filter (truthy), it's added to a new array</li>
+								<li>If it doesn't match (falsy), ignore it</li>
+								<li>Returns a new array</li>
+							</ol>
+						</main>
+					</section>
+					
+					<section slot="back-content">
+						<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
+						<main>
+							<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
+							<ul>
+								<li><code>var fruits = ['pear', 'banana', 'plum'];</code></li>
+								<li class="comment">Fruits contains an array with 3 strings</li>
+								<li><code>const result = fruits.filter(fruit => fruit.length &lt; 5); </code></li>
+								<li class="comment">Fruit represents each array item</li>
+								<li><code>console.log(result);</code></li>
+								<li class="comment">Values less than 5 characters are added to a new array and stored in result</li>
+								<li><code>// output: Array ['pear', 'plum']</code></li>
+							</ul>
+						</main>
+					</section>
+				</flip-card>
 
-					<flip-card class="greenCard">
-						<section slot="front-content" >
-								<img class="header-img" src="asset/if_block.png" />
-								<main>
-									<h1 class="card-title">Conditional Block</h1>
-									<p>Code inside the conditional block will execute if the first statement is true</p>
-								</main>
-						</section>
+				<flip-card class="greenCard">
+					<section slot="front-content" >
+							<img class="header-img" src="asset/if_block.png" />
+							<main>
+								<h1 class="card-title">Conditional Block</h1>
+								<p>Code inside the conditional block will execute if the first statement is true</p>
+							</main>
+					</section>
 
-						<section slot="back-content">
+					<section slot="back-content">
 <pre class="prettyprint lang-c">
 // The 'true' value 
 // can be replaced 
@@ -172,8 +181,8 @@ if (true) {
   // if the conditional 
   // is evaluates to true
 }</pre>
-						</section>
-					</flip-card>
+					</section>
+				</flip-card>
 		
 		<script>
 			addEventListener('load', function(event) { PR.prettyPrint(); }, false);
