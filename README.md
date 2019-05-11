@@ -22,48 +22,6 @@ import('path/to/flip-card.js');
 ```
 
 Then use it like you would any other HTML tag:
-
-<!--
-```
-<custom-element-demo>
-  <template>
-    <link rel="import" href="flip-card.js">
-    <flip-card>
-						<section slot="front-content">
-							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
-							<main>
-								<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
-								<ol>
-									<li>Takes an array</li>
-									<li>A callback function filters the array</li>
-									<li>Filter is applied to each array item</li>
-									<li>If the value matches the filter (truthy), it's added to a new array</li>
-									<li>If it doesn't match (falsy), ignore it</li>
-									<li>Returns a new array</li>
-								</ol>
-							</main>
-						</section>
-						
-						<section slot="back-content">
-							<header class="banner"><i class="fab fa-js-square"></i> JavaScript</header>
-							<main>
-								<h1 class="card-title"><i class="fas fa-filter"></i></i>array.filter()</h1>
-								<ul>
-									<li><code>var fruits = ['pear', 'banana', 'plum'];</code></li>
-									<li class="comment">Fruits contains an array with 3 strings</li>
-									<li><code>const result = fruits.filter(fruit => fruit.length &lt; 5); </code></li>
-									<li class="comment">Fruit represents each array item</li>
-									<li><code>console.log(result);</code></li>
-									<li class="comment">Values less than 5 characters are added to a new array and stored in result</li>
-									<li><code>// output: Array ['pear', 'plum']</code></li>
-								</ul>
-							</main>
-						</section>
-					</flip-card>
-  </template>
-</custom-element-demo>
-```
--->
 ```html
 <flip-card></flip-card>
 ```
