@@ -32,7 +32,7 @@
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
-    "mocha": "^5.2.0",
+    "mocha": "^10.2.0",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-node-resolve": "^4.2.4",
